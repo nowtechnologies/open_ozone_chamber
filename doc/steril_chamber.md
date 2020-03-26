@@ -1,0 +1,3 @@
+# Sterilization chamber
+
+![](chamber.png)

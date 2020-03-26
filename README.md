@@ -39,9 +39,9 @@ This sterilizer system consists of three separate modules that can be <u>either 
 * The ozone enriched air is pumped into a sealed **chamber**. 
 * The **controller** is regulating the sterilization process.
 
-![](doc/blocks.png)
+<img src="doc/blocks.png" style="zoom: 33%;" />
 
-#### Ozone generator
+#### [Ozone generator](doc/ozone_generator.md)
 
 A coronal discharge method based generator consists of:
 
@@ -53,16 +53,24 @@ A coronal discharge method based generator consists of:
 
 ![](doc/generator.png)
 
-#### Sterilization chamber
+#### [Sterilization chamber](doc/steril_chamber.md)
 
 * The chamber has to be somewhat airtight as the ozone is harmful to humans as well.
 * There has to be a way to let the ozone flow tube in.
 * Ozone, temperature and humidity sensors has to be placed inside.
 * Ideally an electric lock should block the door.
 
-![](doc/chamber.png)
+<img src="doc/chamber.png" style="zoom: 33%;" />
 
-#### Controller ( user interface, micro-controller, sensors )
+#### [Process controller](doc/controller.md)
 
+*  MCU chip or board *( general programmable micro controller board e.g. Nucleo or Arduino )*
+* Temperature sensor to support the decomposition model.
+* Humidity sensor to check protocol requirements are met.
+* Ozone sensor as control feedback and to check protocol requirements.
+* Optional user interface *( Small OLED display and rotary encoder )* for setting chamber parameters
+* Single button to start / stop sterilization process.
+* Process indicator *( e.g. large LED )*
+* Interfaces to control the ozone generator, humidifer and lock. *( e.g. solid state relays )*
 
-
+![](doc/controller.png)
