@@ -72,7 +72,7 @@ A coronal discharge method based generator consists of:
 ### [Process controller](doc/controller.md)
 
 *  In it's simplest form this could be a timer switch. *( either the generators built-in timer or an external )*
-*  Also there are ready made [ozone controllers]([http://www.iaq.hu/F2077TSM-O3%20ozontavado.pdf](http://www.iaq.hu/F2077TSM-O3 ozontavado.pdf)) with relay outputs.
+*  Also there are ready made [ozone controllers](http://www.iaq.hu/F2077TSM-O3%20ozontavado.pdf) with relay outputs.
 
 **Otherwise a controller could consist of:**
 
