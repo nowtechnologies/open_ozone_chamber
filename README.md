@@ -4,7 +4,7 @@
 
 This project aims to lay down general design instructions for an ozone generation based sterilization chamber that could be deployed fast to medical environments. The design is layered and modular to take component availability into account.
 
-### About ozone
+## About ozone
 
 Ozone (O3) is an unstable gas comprising three atoms of oxygen. It is unstable because the gas will readily degrade back to its stable state, diatomic oxygen (O2) with the formation of free oxygen atoms or free radicals. The free oxygen atoms or radicals are highly reactive and they will oxidize almost anything  including viruses, bacteria, organic and inorganic compounds) in contacts, making ozone an enormously powerful disinfectant and oxidizer. 
 
@@ -16,11 +16,11 @@ Ozone (O3) is an unstable gas comprising three atoms of oxygen. It is unstable b
 * Decomposition of 2 mol (96 g) ozone to 3 mols of oxygen requires 286 kJ energy
 * [Materials ozone resistance chart](https://www.oxidationtech.com/blog/materials-ozone-resistance-chart/)
 
-### Sterilization protocol
+## Sterilization protocol
 
 The standard program adopted involves increasing the ozone level over a period of 15 min to 25 ppm, maintaining this level for 10 min, at which point the humidifier was activated to produce a rapid burst of water vapor. This should result in the RH increasing to > 95% within 5 min. Following this the humidifier and generator are switched off and the catalytic converter is switched on, which results in decrease in ozone to < 1 ppm within 15 min. [Hudson et al.](doc/Ozone_Science_and_Engineering_Pub_Jan091.pdf)
 
-### Device requirements
+## Device requirements
 
 * Hermetically sealed sterilization chamber *( when door is closed )*
 * Effective minimum concentration of ozone is 25 ppm **~50 mg/m3** *( 1 ppm (O3) = 2.14 mg/m3 )*
@@ -31,7 +31,7 @@ The standard program adopted involves increasing the ozone level over a period o
 * Ozone **levels** should be either measured or predicted by its decomposition model.
 * Temperature and humidity can be easily monitored. *( supporting the level prediction - optional )*
 
-### System block diagram
+## System block diagram
 
 This sterilizer system consists of three separate modules that can be <u>either bought or built</u>:
 
@@ -41,7 +41,7 @@ This sterilizer system consists of three separate modules that can be <u>either 
 
 <img src="doc/blocks.png" style="zoom: 33%;" />
 
-#### [Ozone generator](doc/ozone_generator.md)
+### [Ozone generator](doc/ozone_generator.md)
 
 A coronal discharge method based generator consists of:
 
@@ -53,7 +53,7 @@ A coronal discharge method based generator consists of:
 
 ![](doc/generator.png)
 
-#### [Sterilization chamber](doc/steril_chamber.md)
+### [Sterilization chamber](doc/steril_chamber.md)
 
 * The chamber has to be somewhat airtight as the ozone is harmful to humans as well.
 * There has to be a way to let the ozone flow tube in.
@@ -62,7 +62,7 @@ A coronal discharge method based generator consists of:
 
 <img src="doc/chamber.png" style="zoom: 33%;" />
 
-#### [Process controller](doc/controller.md)
+### [Process controller](doc/controller.md)
 
 *  MCU chip or board *( general programmable micro controller board e.g. Nucleo or Arduino )*
 * Temperature sensor to support the decomposition model.
@@ -71,6 +71,6 @@ A coronal discharge method based generator consists of:
 * Optional user interface *( Small OLED display and rotary encoder )* for setting chamber parameters
 * Single button to start / stop sterilization process.
 * Process indicator *( e.g. large LED )*
-* Interfaces to control the ozone generator, humidifer and lock. *( e.g. solid state relays )*
+* Interfaces to control the ozone generator, humidifier and lock. *( e.g. solid state relays )*
 
 ![](doc/controller.png)
