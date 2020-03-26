@@ -8,7 +8,7 @@ Room and car air purifiers can meet the requirements if we take into considerati
 
 #### Advantages
 
-* Fastest way to start with.
+* Fastest way to start with. *( Put it in a closed chamber and turn it on for n minutes. )*
 * It has been built and tested.
 * It has the capacity to sterilize a complete room. *( 5-10 g/h )*
 * The indicator and timer is already built in. *( also potential disadvantage )* 
@@ -20,8 +20,6 @@ Room and car air purifiers can meet the requirements if we take into considerati
 * There might be some difficulties with the supply chain.
 
 ![](o3gen.jpg)
-
-#### Exhaust adapter
 
 
 

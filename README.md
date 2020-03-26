@@ -33,13 +33,21 @@ The standard program adopted involves increasing the ozone level over a period o
 
 ## System block diagram
 
-This sterilizer system consists of three separate modules that can be <u>either bought or built</u>:
+The whole system can be either completely closed, or partially open, where the ionized air can travel through the chamber into a catalyst. For the sake of simplicity we recommend building the closed system with the <u>generator inside the sterilization chamber</u>.
+
+Either way the sterilizer system consists of three separate modules that can be <u>bought or built</u>:
 
 * The **generator** is turning atmospheric oxygen into ozone enriched air.
 * The ozone enriched air is pumped into a sealed **chamber**. 
 * The **controller** is regulating the sterilization process.
 
+#### Open system
+
 <img src="doc/blocks.png" style="zoom: 33%;" />
+
+#### Closed system
+
+![](doc/closed_block.png)
 
 ### [Ozone generator](doc/ozone_generator.md)
 
@@ -56,13 +64,17 @@ A coronal discharge method based generator consists of:
 ### [Sterilization chamber](doc/steril_chamber.md)
 
 * The chamber has to be somewhat airtight as the ozone is harmful to humans as well.
-* There has to be a way to let the ozone flow tube in.
 * Ozone, temperature and humidity sensors has to be placed inside.
 * Ideally an electric lock should block the door.
 
-<img src="doc/chamber.png" style="zoom: 33%;" />
+<img src="doc/chamber.png"  />
 
 ### [Process controller](doc/controller.md)
+
+*  In it's simplest form this could be a timer switch. *( either the generators built-in timer or an external )*
+*  Also there are ready made [ozone controllers]([http://www.iaq.hu/F2077TSM-O3%20ozontavado.pdf](http://www.iaq.hu/F2077TSM-O3 ozontavado.pdf)) with relay outputs.
+
+**Otherwise a controller could consist of:**
 
 *  MCU chip or board *( general programmable micro controller board e.g. Nucleo or Arduino )*
 * Temperature sensor to support the decomposition model.
@@ -74,3 +86,8 @@ A coronal discharge method based generator consists of:
 * Interfaces to control the ozone generator, humidifier and lock. *( e.g. solid state relays )*
 
 ![](doc/controller.png)
+
+## Build instructions
+
+#### *coming up...*
+
