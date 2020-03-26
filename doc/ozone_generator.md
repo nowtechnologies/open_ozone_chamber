@@ -21,6 +21,10 @@ Room and car air purifiers can meet the requirements if we take into considerati
 
 ![](o3gen.jpg)
 
+#### Exhaust adapter
+
+
+
 ## Ozone generator modules
 
 Generator modules come in different shapes and sizes, the most frequent types are based on ceramic plate electrodes. These modules also easily met the minimum capacity requirements. As a thumb rule one plate *( ~100x50mm )* can produce ~5 g/h ozone. The modules can be either DC or AC powered by type.
@@ -95,3 +99,4 @@ Depending on its electronic design the HV-PSU can be either an AC/DC or a DC/DC 
 Generally speaking there are two stages in a high voltage PSU
 
 ![](hv_psu.png)
+
