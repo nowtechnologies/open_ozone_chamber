@@ -55,6 +55,13 @@ A coronal discharge method based generator consists of:
 
 #### Sterilization chamber
 
+* The chamber has to be somewhat airtight as the ozone is harmful to humans as well.
+* There has to be a way to let the ozone flow tube in.
+* Ozone, temperature and humidity sensors has to be placed inside.
+* Ideally an electric lock should block the door.
+
+![](doc/chamber.png)
+
 #### Controller ( user interface, micro-controller, sensors )
 
 
