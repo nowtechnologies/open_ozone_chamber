@@ -89,5 +89,26 @@ A coronal discharge method based generator consists of:
 
 ## Build instructions
 
-#### *coming up...*
+### System assembly from ready made products
 
+* If time is a factor to consider we recommend building the closed system design:
+  * A refrigerator of desired size and an off the shelf ozone generator placed in it.
+  * Use the [volume to treatment time converter tool]() to figure out the protocol. :construction:
+
+Follow the [instructions here](). :construction:
+
+### How to build the missing ozone generator
+
+* If an off-the-shelf generator is not available:
+  * Here is how to [build it from modules](doc/generator.md). 
+  * And if you can't find modules anymore here is how to [build it from components](doc/generator.md). :construction:
+* Generator [capacity measurement instructions](). :construction:
+
+### Build instructions for the control unit
+
+* In the simplest scenario the "control unit" is the time switch on the generator.
+* If the generator is built from modules or scratch here is how to [add a time switch](). :construction:
+* Continuous operation requires more sophisticated control with sensor feedback:
+  * Follow this link to [build a general controller](). :construction:
+  * Here is how to use a [temperature sensor for feedback](). :construction:
+  * Connect an [ozone detector](). :construction:
