@@ -1,0 +1,27 @@
+<body>
+  Chamber volume (m3):
+  <br>
+  <input type="text" id="Text1" name="TextBox1">
+  <br>Generator capacity (g/h):
+  <br>
+  <input type="text" id="Text2" name="TextBox2">
+  <br>Exposure time (sec) :
+  <br>
+  <input type="text" id="txtresult" name="TextBox3">
+  <br>
+  <input type="button" name="clickbtn" value="Display Result" onclick="add_number()">
+
+  <script>
+    function add_number() {
+        var min_conc = 0.05;
+        var volume = parseFloat(document.getElementById("Text1").value);
+        var capacity = parseFloat(document.getElementById("Text2").value);
+        var req_mass = min_conc * volume;
+        var prod_per_sec = capacity / 3600.0;
+        var result = req_mass / prod_per_sec;
+
+        document.getElementById("txtresult").value = result;
+    }
+  </script>
+
+</body>

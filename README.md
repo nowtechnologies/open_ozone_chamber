@@ -134,7 +134,7 @@ Ozone can be reduced to oxygen **thermally** or **catalytically**:
 :warning: If time is a factor and there is opportunity to vent the room after each sterilization process we recommend building the fully closed system design *( although it is bad for the environment )*:
 
 * A refrigerator of desired size and an off the shelf ozone generator placed in it.
-* Use the [volume to treatment time converter tool]() to figure out the protocol. :construction:
+* Use the [volume to treatment time converter tool](http://nowtech.cloud/closed_calc.html) to figure out the protocol.
 * Use the built in timer or connect a ready made AC timer switch.
 * Follow the [instructions here](). :construction:
 
