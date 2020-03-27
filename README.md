@@ -14,7 +14,7 @@ Ozone (O3) is an unstable gas comprising three atoms of oxygen. It is unstable b
 
 The MAC-value is the Maximum Acceptable Concentration a human is allowed to be exposed to for a certain time and certain agent. For ozone the MAC-values is **0.06 PPM for 8 hours a day, 5 days a week** (PPM = Parts Per Million). For a maximum of 15 minutes a MAC-value of 0.3 PPM is applied.
 
-Read more: https://www.lenntech.com/library/ozone/faq/faqozone.htm#ixzz6Hsq3LGuu
+Read more: https://www.lenntech.com/library/ozone/decomposition/ozone-decomposition.htm
 
 | **Temp (°C)** | Half live   |
 | ------------- | ----------- |
@@ -129,11 +129,18 @@ Ozone can be reduced to oxygen **thermally** or **catalytically**:
 
 ## Build instructions
 
-### System assembly from ready made products
+### Closed system assembly ( with ready made products )
 
 :warning: If time is a factor and there is opportunity to vent the room after each sterilization process we recommend building the fully closed system design *( although it is bad for the environment )*:
 
 * A refrigerator of desired size and an off the shelf ozone generator placed in it.
+* Use the [volume to treatment time converter tool]() to figure out the protocol. :construction:
+* Follow the [instructions here](). :construction:
+
+### Semi-professional device for continuous operation
+
+:warning: It is highly advised for medical environments to build a device with an ozone decomposer to prevent unnecessary ozone accumulation in the building.
+
 * Use the [volume to treatment time converter tool]() to figure out the protocol. :construction:
 * Follow the [instructions here](). :construction:
 
@@ -142,6 +149,7 @@ Ozone can be reduced to oxygen **thermally** or **catalytically**:
 * If an off-the-shelf generator is not available:
   * Here is how to [build it from modules](doc/ozone_generator.md). 
   * And if you can't find modules anymore here is how to [build it from components](doc/generator.md). :construction:
+* Also detailed information on [how to create the electrodes](doc/electrodes.md) itself. :construction:
 * Generator [capacity measurement instructions](). :construction:
 
 ### Build instructions for the control unit
