@@ -65,8 +65,8 @@ Either way the sterilizer system consists of four separate modules that can be <
 
 * The **generator** is turning atmospheric oxygen into ozone enriched air.
 * The ozone enriched air is pumped into a sealed **chamber**. 
+* The **decomposer** that helps to break down ozone to oxygen. *( optional )*
 * The **controller** is regulating the sterilization process.
-* The **catalyst** that helps to break down ozone to oxygen. *( optional )*
 
 #### Open system
 
@@ -98,12 +98,14 @@ A coronal discharge method based generator consists of:
 
 <img src="doc/chamber.png"  />
 
-### [The catalizator](doc/catalyst.md)
+### [Decomposer](doc/catalyst.md)
 
-* Catalizator is essentially a compartment containing the catalyst.
-* The ozone enriched air from the chamber has to be able to enter the catalyst compartment.
-* Essentially it could be replaced with a bucket of tap water.
-* If the pH can be controlled, basic environment is preferable.
+Ozone can be reduced to oxygen **thermally** or **catalytically**:
+
+* The ozone enriched air from the chamber has to be able to enter the decomposer.
+* In case of catalytic destruction the decomposer could be a bucket of tap water.
+* If the pH can be controlled, basic environment is preferable. *( Pka  = 10,3 )*
+* Thermal decomposition is effective if the air flows through a tube heated to **250 C** *( HL = 1.5s )*
 
 ![](doc/catalyst.png)
 
