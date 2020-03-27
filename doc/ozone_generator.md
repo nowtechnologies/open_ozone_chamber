@@ -71,12 +71,11 @@ The electrodes are the **critical parts** of a generator as the instable ozone m
 
 * https://www.sihon-ozone.com/product-items/ozone-ceramic-plates/
 
-#### Alternative electrodes
+#### [Alternative electrodes](electrodes.md)
 
-* Glass sheet with metal wire structure on one side and whole sheet as ground on the other
+* Glass sheet or tube with aluminum wire structures on both sides
 * Sheets of stainless steel with saw forming edges *( arc gap on the edges )*
 * Double sided printed circuit board  *( Preferably aluminum base layer )* 
-* *To Do: add printed circuit board design*
 
 ### High voltage power supply
 
@@ -98,7 +97,3 @@ Depending on its electronic design the HV-PSU can be either an AC/DC or a DC/DC 
 Generally speaking there are two stages in a high voltage PSU, a waveform generator and a voltage multiplier. 
 
 ![](hv_psu.png)
-
-*To Do:*
-
-* *add schematics and board design files*
