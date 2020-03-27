@@ -42,7 +42,7 @@ Read more: https://www.lenntech.com/library/ozone/decomposition/ozone-decomposit
 * [Materials ozone resistance chart](https://www.oxidationtech.com/blog/materials-ozone-resistance-chart/)
 * [Ozone decomposition kinetics](doc/Ozone_decomposition_kinetics.pdf)
 
-## Sterilization protocol
+## Decontamination protocol
 
 The standard program adopted involves increasing the ozone level over a period of 15 min to 25 ppm, maintaining this level for 10 min, at which point the humidifier was activated to produce a rapid burst of water vapor. This should result in the RH increasing to > 95% within 5 min. Following this the humidifier and generator are switched off and the catalytic converter is switched on, which results in decrease in ozone to < 1 ppm within 15 min. [Hudson et al.](doc/Ozone_Science_and_Engineering_Pub_Jan091.pdf)
 
@@ -135,13 +135,13 @@ Ozone can be reduced to oxygen **thermally** or **catalytically**:
 
 * A refrigerator of desired size and an off the shelf ozone generator placed in it.
 * Use the [volume to treatment time converter tool]() to figure out the protocol. :construction:
+* Use the built in timer or connect a ready made AC timer switch.
 * Follow the [instructions here](). :construction:
 
 ### Semi-professional device for continuous operation
 
 :warning: It is highly advised for medical environments to build a device with an ozone decomposer to prevent unnecessary ozone accumulation in the building.
 
-* Use the [volume to treatment time converter tool]() to figure out the protocol. :construction:
 * Follow the [instructions here](). :construction:
 
 ### How to build the missing ozone generator
@@ -150,7 +150,7 @@ Ozone can be reduced to oxygen **thermally** or **catalytically**:
   * Here is how to [build it from modules](doc/ozone_generator.md). 
   * And if you can't find modules anymore here is how to [build it from components](doc/generator.md). :construction:
 * Also detailed information on [how to create the electrodes](doc/electrodes.md) itself. :construction:
-* Generator [capacity measurement instructions](). :construction:
+* Generator [capacity measurement instructions](doc/capacity.md). :construction:
 
 ### Build instructions for the control unit
 
