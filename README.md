@@ -12,9 +12,31 @@ Ozone (O3) is an unstable gas comprising three atoms of oxygen. It is unstable b
 
 :warning: **Ozone with concentration higher than 1 ppm has adverse effects on human health and the use of ozone for air disinfection is generally not recommended if people are around.** :warning:
 
-* Ozone breaks down to oxygen with a half life of about 20 minutes ( at 20 degrees Celsius )
+| **Temp (°C)** | Half live   |
+| ------------- | ----------- |
+| -50           | 3 months    |
+| -35           | 18 days     |
+| -25           | 8 days      |
+| 20            | 3 days      |
+| 120           | 1,5 hours   |
+| 250           | 1,5 seconds |
+
+**Dissolved in water (pH 7)**
+
+| **Temp (°C)** | **Half** **live** |
+| ------------- | ----------------- |
+| 15            | 30 min            |
+| 20            | 20 min            |
+| 25            | 15 min            |
+| 30            | 12 min            |
+| 35            | 8 min             |
+
+* Ozone breaks down to oxygen with a half life of about 20 minutes ( at 20 degrees Celsius in water )
 * Decomposition of 2 mol (96 g) ozone to 3 mols of oxygen requires 286 kJ energy
+* pH influences acid/base equilibriums of some compounds and also the reaction speed of ozone.
+* Decay of ozone in a basic environment is much faster than in an acid environment.
 * [Materials ozone resistance chart](https://www.oxidationtech.com/blog/materials-ozone-resistance-chart/)
+* [Ozone decomposition kinetics](doc/Ozone_decomposition_kinetics.pdf)
 
 ## Sterilization protocol
 
@@ -91,7 +113,7 @@ A coronal discharge method based generator consists of:
 
 ### System assembly from ready made products
 
-* If time is a factor to consider we recommend building the closed system design:
+* If time is a factor and there is opportunity to vent the room after each sterilization process we recommend building the closed system design *( although it is bad for the environment )*:
   * A refrigerator of desired size and an off the shelf ozone generator placed in it.
   * Use the [volume to treatment time converter tool]() to figure out the protocol. :construction:
 
@@ -100,7 +122,7 @@ Follow the [instructions here](). :construction:
 ### How to build the missing ozone generator
 
 * If an off-the-shelf generator is not available:
-  * Here is how to [build it from modules](doc/generator.md). 
+  * Here is how to [build it from modules](doc/ozone_generator.md). 
   * And if you can't find modules anymore here is how to [build it from components](doc/generator.md). :construction:
 * Generator [capacity measurement instructions](). :construction:
 
