@@ -12,6 +12,10 @@ Ozone (O3) is an unstable gas comprising three atoms of oxygen. It is unstable b
 
 :warning: **Ozone with concentration higher than 1 ppm has adverse effects on human health and the use of ozone for air disinfection is generally not recommended if people are around.** :warning:
 
+The MAC-value is the Maximum Acceptable Concentration a human is allowed to be exposed to for a certain time and certain agent. For ozone the MAC-values is **0.06 PPM for 8 hours a day, 5 days a week** (PPM = Parts Per Million). For a maximum of 15 minutes a MAC-value of 0.3 PPM is applied.
+
+Read more: https://www.lenntech.com/library/ozone/faq/faqozone.htm#ixzz6Hsq3LGuu
+
 | **Temp (°C)** | Half live   |
 | ------------- | ----------- |
 | -50           | 3 months    |
@@ -34,7 +38,7 @@ Ozone (O3) is an unstable gas comprising three atoms of oxygen. It is unstable b
 * Ozone breaks down to oxygen with a half life of about 20 minutes ( at 20 degrees Celsius in water )
 * Decomposition of 2 mol (96 g) ozone to 3 mols of oxygen requires 286 kJ energy
 * pH influences acid/base equilibriums of some compounds and also the reaction speed of ozone.
-* Decay of ozone in a basic environment is much faster than in an acid environment.
+* Decay of ozone in a basic environment is much faster than in an acid environment!
 * [Materials ozone resistance chart](https://www.oxidationtech.com/blog/materials-ozone-resistance-chart/)
 * [Ozone decomposition kinetics](doc/Ozone_decomposition_kinetics.pdf)
 
@@ -57,17 +61,20 @@ The standard program adopted involves increasing the ozone level over a period o
 
 The whole system can be either completely closed, or partially open, where the ionized air can travel through the chamber into a catalyst. For the sake of simplicity we recommend building the closed system with the <u>generator inside the sterilization chamber</u>.
 
-Either way the sterilizer system consists of three separate modules that can be <u>bought or built</u>:
+Either way the sterilizer system consists of four separate modules that can be <u>bought or built</u>:
 
 * The **generator** is turning atmospheric oxygen into ozone enriched air.
 * The ozone enriched air is pumped into a sealed **chamber**. 
 * The **controller** is regulating the sterilization process.
+* The **catalyst** that helps to break down ozone to oxygen. *( optional )*
 
 #### Open system
 
 <img src="doc/blocks.png" style="zoom: 33%;" />
 
 #### Closed system
+
+:warning: **Note**: this design is only recommended in emergency situations, where sufficient ventilation of the room can be provided!
 
 ![](doc/closed_block.png)
 
@@ -91,9 +98,18 @@ A coronal discharge method based generator consists of:
 
 <img src="doc/chamber.png"  />
 
+### [The catalizator](doc/catalyst.md)
+
+* Catalizator is essentially a compartment containing the catalyst.
+* The ozone enriched air from the chamber has to be able to enter the catalyst compartment.
+* Essentially it could be replaced with a bucket of tap water.
+* If the pH can be controlled, basic environment is preferable.
+
+![](doc/catalyst.png)
+
 ### [Process controller](doc/controller.md)
 
-*  In it's simplest form this could be a timer switch. *( either the generators built-in timer or an external )*
+*  In it's simplest form this could be a **timer switch**. *( either the generators built-in timer or an external )*
 *  Also there are ready made [ozone controllers](http://www.iaq.hu/F2077TSM-O3%20ozontavado.pdf) with relay outputs.
 
 **Otherwise a controller could consist of:**
@@ -113,11 +129,11 @@ A coronal discharge method based generator consists of:
 
 ### System assembly from ready made products
 
-* If time is a factor and there is opportunity to vent the room after each sterilization process we recommend building the closed system design *( although it is bad for the environment )*:
-  * A refrigerator of desired size and an off the shelf ozone generator placed in it.
-  * Use the [volume to treatment time converter tool]() to figure out the protocol. :construction:
+:warning: If time is a factor and there is opportunity to vent the room after each sterilization process we recommend building the fully closed system design *( although it is bad for the environment )*:
 
-Follow the [instructions here](). :construction:
+* A refrigerator of desired size and an off the shelf ozone generator placed in it.
+* Use the [volume to treatment time converter tool]() to figure out the protocol. :construction:
+* Follow the [instructions here](). :construction:
 
 ### How to build the missing ozone generator
 
