@@ -129,34 +129,39 @@ Ozone can be reduced to oxygen **thermally** or **catalytically**:
 
 ## Build instructions
 
-### Closed system assembly ( with ready made products )
+### Closed system assembly
 
-:warning: If time is a factor and there is opportunity to vent the room after each sterilization process we recommend building the fully closed system design *( although it is bad for the environment )*:
+:warning: If time is a factor and there is opportunity to vent the room after each sterilization process we recommend building the fully closed system design *( although it is bad for the environment )*.
 
-* A refrigerator of desired size and an off the shelf ozone generator placed in it.
-* Use the [volume to treatment time converter tool](http://nowtech.cloud/closed_calc.html) to figure out the protocol.
-* Use the built in timer or connect a ready made AC timer switch.
-* Follow the [instructions here](). :construction:
+**Fastest way:**
 
-### Semi-professional device for continuous operation
+* Get a refrigerator of desired size and place an off the shelf ozone generator in it.
+* Use our [volume to treatment time converter tool](http://nowtech.cloud/closed_calc.html) to figure out the timing protocol.
+* Plug the system in, through a ready made AC timer switch.
+* Follow the [instructions here](doc/ver_emergency.md).
+
+### Open system assembly
 
 :warning: It is highly advised for medical environments to build a device with an ozone decomposer to prevent unnecessary ozone accumulation in the building.
 
-* Follow the [instructions here](). :construction:
+* A hermetic chamber or a modified refrigerator.
+* An off-the-shelf or a DIY ozone controller.
+* An off-the-shelf or a DIY decomposer.
+
+* Follow the build [instructions here](). :construction:
 
 ### How to build the missing ozone generator
 
 * If an off-the-shelf generator is not available:
   * Here is how to [build it from modules](doc/ozone_generator.md). 
-  * And if you can't find modules anymore here is how to [build it from components](doc/generator.md). :construction:
-* Also detailed information on [how to create the electrodes](doc/electrodes.md) itself. :construction:
-* Generator [capacity measurement instructions](doc/capacity.md). :construction:
+  * And if you can't find modules anymore here is how to [build it from components](doc/ozone_generator.md).
+* Also detailed information on [how to create the electrodes](doc/electrodes.md) itself.
+* Generator [capacity measurement instructions](doc/capacity.md).
 
 ### Build instructions for the control unit
 
-* In the simplest scenario the "control unit" is the time switch on the generator.
-* If the generator is built from modules or scratch here is how to [add a time switch](). :construction:
+* Worst case scenario the process controller is the "timer switch" on the generator.
+  * If the generator is built from modules or scratch [add a timer switch](doc/ots_controller.md).​
 * Continuous operation requires more sophisticated control with sensor feedback:
-  * Follow this link to [build a general controller](). :construction:
-  * Here is how to use a [temperature sensor for feedback](). :construction:
-  * Connect an [ozone detector](). :construction:
+  * Find a controller that has been manufactured for this purpose, or
+  * follow this link to [build a process controller](doc/diy_controller.md).:construction:

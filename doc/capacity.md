@@ -11,7 +11,16 @@ Simplest way to determine the capacity of a generator is with a calibrated measu
 * Typical range 10 ppm - 1000 ppm
 * Price 250 - 1500 EUR
 
+
+
 ## Ozone iodometric titration :construction:
+
+
+
+
+
+
 
 ## Build a detector :construction:
 
+:warning: The proposed **DIY process controller** can be used as a measurement device as well.
