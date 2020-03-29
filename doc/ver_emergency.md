@@ -84,11 +84,14 @@ Now repeat the step with the cable provided for the generator, and connect it to
 ### Install the generator
 
 Place the generator so that neither the intake for it's fan nor the exhaust panel is blocked. 
-**You are done!**
 
 ![](build/refr_gen_install.jpg)
 
+### Seal the sinker hole
 
+Every refrigerator has a hole to allow the damp to drip down. **This has to be sealed!** Use silicone or duct tape to seal it.
+
+![](build/refr_seal.jpg)
 
 ## Using the emergency sterilizer
 
