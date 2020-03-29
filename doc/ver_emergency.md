@@ -2,6 +2,8 @@
 
 :warning: These instructions are for emergency situations, where all off-the-shelf components are at hand and there is very short time to produce a working sterilizer. In any other case please build one that has an ozone detector based process controller.
 
+### :construction: WARNING: Disinfection protocols are not finalized yet! :construction:
+
 ## Components
 
 * Refrigerator
@@ -32,7 +34,7 @@ Find the distributor box ( probably near the compressor ), pull the cables out s
 
 ### Degassing :warning:
 
-This step is potentially **dangerous** as most refrigerators in Europe are filled with **R600** gas that is highly flammable. The system has to be degassed very slowly to avoid risk. Place the refrigerator in a perfectly ventilated room or take it outside to open air before continuing with this step!
+This step is **dangerous** as most refrigerators in Europe are filled with **R600** gas that is highly flammable. The system has to be degassed very slowly to avoid risk. Take the refrigerator outside to **open air** before continuing with this step! **Avoid any probability and proximity to open flame or sparks at all times during the degassing process.**
 
 1. Find a cartridge shaped gas puffer that has - usually - a thinner copper tube coiled around it.
 2. **Cut the thin copper tube and step aside until you don't hear it hiss anymore.** *( marked as 1st )*
@@ -111,12 +113,4 @@ Most generators' - that have analogue timer built in - continuous operation can 
 
 ![](build/refr_gen_timer.jpg)
 
-### Usage
-
-**:warning: Disinfection protocols are not finalized yet :warning:**
-
-1. Make sure that the device is not in operation, and the room has sufficient ventilation.
-2. Place the items to to be disinfected into the chamber.
-3. Close the door.
-4. Set [treatment time](http://nowtech.cloud/closed_calc.html) and start procedure.
-5. Wait at least 15 minutes before opening the chamber again.
+# :construction:

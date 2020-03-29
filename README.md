@@ -98,7 +98,7 @@ A coronal discharge method based generator consists of:
 
 <img src="doc/chamber.png"  />
 
-### [Decomposer](doc/catalyst.md)
+### [Decomposer](doc/catalizator.md)
 
 Ozone can be reduced to oxygen **thermally** or **catalytically**:
 
