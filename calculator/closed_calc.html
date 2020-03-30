@@ -1,27 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Closed space ozone exposure time calculator</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
 <body>
-  Chamber volume (m3):
-  <br>
-  <input type="text" id="Text1" name="TextBox1">
-  <br>Generator capacity (g/h):
-  <br>
-  <input type="text" id="Text2" name="TextBox2">
-  <br>Exposure time (sec) :
-  <br>
-  <input type="text" id="txtresult" name="TextBox3">
-  <br>
-  <input type="button" name="clickbtn" value="Display Result" onclick="add_number()">
+<div class="container">
+	<!-- Nav -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	  <a class="navbar-brand" href="index.html">
+		<img src="https://avatars2.githubusercontent.com/u/62620892?s=60" width="30" height="30" class="d-inline-block align-top" alt="">
+		Ozone Calculators
+	  </a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarNav">
+		<ul class="navbar-nav">
+		  <li class="nav-item">
+			<a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+		  </li>
+		  <li class="nav-item active">
+			<a class="nav-link" href="closed_calc.html">Closed space</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="open_calc.html">Open space</a>
+		  </li>
+		</ul>
+	  </div>
+	</nav>
+	
+	<!-- Content -->
+	<div class="jumbotron" style="background-color: #f0f0f0;">
+	<h3>Closed space ozone exposure time calculator</h3>
+	<form>
+	  <div class="form-group">
+		<label for="inputVol">Chamber volume (m<sup>3</sup>)</label>
+		<input type="text" class="form-control" id="inputVol" aria-describedby="volHelp">
+		<small id="volHelp" class="form-text text-muted">Chamber volume in cubic metres (m<sup>3</sup>)</small>
+	  </div>
+	  <div class="form-group">
+		<label for="inputCap">Generator capacity (g/h)</label>
+		<input type="text" class="form-control" id="inputCap" aria-describedby="capHelp">
+		<small id="capHelp" class="form-text text-muted">Ozone generator capacity in grams-per-hour</small>
+	  </div>
+	  <div class="form-group">
+		<label for="inputExp">Exposure time (seconds)</label>
+		<input type="text" class="form-control" id="inputExp" placeholder="Calculated exposure time will appear here" readonly>
+	  </div>
+	  <button class="btn btn-primary" onclick="closed_calc(); return false;">Calculate exposure time</button>
+	</form>
+	</div>
+	
 
-  <script>
-    function add_number() {
-        var min_conc = 0.05;
-        var volume = parseFloat(document.getElementById("Text1").value);
-        var capacity = parseFloat(document.getElementById("Text2").value);
-        var req_mass = min_conc * volume;
-        var prod_per_sec = capacity / 3600.0;
-        var result = req_mass / prod_per_sec;
+	
+</div> <!-- container -->
 
-        document.getElementById("txtresult").value = result;
-    }
-  </script>
-
+<script>
+function closed_calc() {
+	var min_conc = 0.05;
+	var volume = parseFloat(document.getElementById("inputVol").value);
+	console.log(volume);
+	var capacity = parseFloat(document.getElementById("inputCap").value);
+	var req_mass = min_conc * volume;
+	var prod_per_sec = capacity / 3600.0;
+	if (capacity == 0 || isNaN(capacity)) {
+		var result = "Generator capacity cannot be zero!";
+		document.getElementById("inputExp").classList.remove("is-valid");
+		document.getElementById("inputExp").classList.add("is-invalid");
+	} else if (volume == 0 || isNaN(volume)) {
+		var result = "Chamber volume cannot be zero!";
+		document.getElementById("inputExp").classList.remove("is-valid");
+		document.getElementById("inputExp").classList.add("is-invalid");
+	} else {
+		document.getElementById("inputExp").classList.remove("is-invalid");
+		document.getElementById("inputExp").classList.add("is-valid");
+		var result = req_mass / prod_per_sec;
+	}
+	document.getElementById("inputExp").value = result;
+}
+</script>
 </body>
+</html>
