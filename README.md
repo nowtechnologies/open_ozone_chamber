@@ -59,13 +59,15 @@ The standard program adopted involves increasing the ozone level over a period o
 
 ## System block diagram
 
+:warning: **Note**: this design is only recommended in emergency situations, where sufficient ventilation of the room can be provided!
+
 The whole system can be either completely closed, or partially open, where the ionized air can travel through the chamber into a catalyst. For the sake of simplicity we recommend building the closed system with the <u>generator inside the sterilization chamber</u>.
 
 Either way the sterilizer system consists of four separate modules that can be <u>bought or built</u>:
 
 * The **generator** is turning atmospheric oxygen into ozone enriched air.
 * The ozone enriched air is pumped into a sealed **chamber**. 
-* The **decomposer** that helps to break down ozone to oxygen. *( optional )*
+* The **decomposer** that helps to break down ozone to oxygen.
 * The **controller** is regulating the sterilization process.
 
 #### Open system
@@ -73,8 +75,6 @@ Either way the sterilizer system consists of four separate modules that can be <
 <img src="doc/blocks.png" style="zoom: 33%;" />
 
 #### Closed system
-
-:warning: **Note**: this design is only recommended in emergency situations, where sufficient ventilation of the room can be provided!
 
 ![](doc/closed_block.png)
 
@@ -100,7 +100,13 @@ A coronal discharge method based generator consists of:
 
 ### [Decomposer](doc/catalizator.md)
 
-Ozone can be reduced to oxygen **thermally** or **catalytically**:
+Ozone can be reduced to oxygen **thermally** or **catalytically** or **by radiation**. 
+
+*In case of a closed system:*
+
+* The chamber has to hold light sources at **254 nm** wavelength with sufficient power to disrupt the instable bonds in ozone molecules.
+
+*In case of an open system:*
 
 * The ozone enriched air from the chamber has to be able to enter the decomposer.
 * In case of catalytic destruction the decomposer could be a bucket of tap water.
