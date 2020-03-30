@@ -62,6 +62,8 @@
 	  </div>
 	  <button class="btn btn-primary" onclick="calc1(); return false;">Calculate Generator output</button>
 	</form>
+	<p><i>Formula:</i> Output [g/h] = FlowRate [LPM] * 60.0 * 0.001 * Concentration [g/m<sup>3</sup>]</p>
+	
 	<h3 style="padding-top: 1em;">Ozone Concentration Conversion</h3>
 	<h4>Ozone Concentration in Air (g/m<sup>3</sup> to PPM)</h4>
 	<form>
@@ -76,6 +78,8 @@
 	  </div>
 	  <button class="btn btn-primary" onclick="calc2(); return false;">Calculate Concentration in PPM</button>
 	</form>
+	<p><i>Formula:</i> Concentration [PPM] = Concentration [g/m<sup>3</sup>] * 467</p>
+	
 	<h4 style="padding-top: 1em;">Ozone Concentration in Air (PPM to g/m<sup>3</sup>)</h4>
 	<form>
 	  <div class="form-group">
@@ -89,10 +93,50 @@
 	  </div>
 	  <button class="btn btn-primary" onclick="calc3(); return false;">Calculate Concentration in g/m<sup>3</sup></button>
 	</form>
+	<p><i>Formula:</i> Concentration [g/m<sup>3</sup>] = Concentration [PPM] / 467</p>
+	
+	<h4 style="padding-top: 1em;">Ozone Concentration in Air by weight (g/m<sup>3</sup> to % and PPM)</h4>
+	<form>
+	  <div class="form-group">
+		<label for="calc4In1">Concentration in Air (g/m<sup>3</sup>)</label>
+		<input type="text" class="form-control" id="calc4In1" aria-describedby="calc4Help1" onchange="calc4()">
+		<small id="calc4Help1" class="form-text text-muted">Note that 1 g/m<sup>3</sup> = 1 mg/l = 1 &mu;g/ml.</small>
+	  </div>
+	  <div class="form-group">
+		<label for="calc4Out">Concentration in mass percentage (%)</label>
+		<input type="text" class="form-control" id="calc4Out" placeholder="Calculated concentration will appear here" readonly>
+	  </div>
+	  <div class="form-group">
+		<label for="calc4Out2">Concentration in PPM</label>
+		<input type="text" class="form-control" id="calc4Out2" placeholder="Calculated PPM will appear here" readonly>
+	  </div>
+	  <button class="btn btn-primary" onclick="calc4(); return false;">Calculate Concentration in mass %</button>
+	</form>
+	<p><i>Formula:</i> Concentration [%] = Concentration [g/m<sup>3</sup>] / 12.8<br>
+	Concentration [PPM] = Concentration [g/m<sup>3</sup>] * 569</p>
+	
+	<h4 style="padding-top: 1em;">Ozone Concentration in Air by weight (PPM to g/m<sup>3</sup> and %)</h4>
+	<form>
+	  <div class="form-group">
+		<label for="calc5In1">Concentration in PPM</label>
+		<input type="text" class="form-control" id="calc5In1" onchange="calc5()">
+	  </div>
+	  <div class="form-group">
+		<label for="calc5Out">Concentration in mass percentage (%)</label>
+		<input type="text" class="form-control" id="calc5Out" placeholder="Calculated concentration will appear here" readonly>
+	  </div>
+	  <div class="form-group">
+		<label for="calc5Out2">Concentration by weight (g/m<sup>3</sup>)</label>
+		<input type="text" class="form-control" id="calc5Out2" placeholder="Calculated concentration will appear here" readonly>
+	  </div>
+	  <button class="btn btn-primary" onclick="calc5(); return false;">Calculate concentration in mass %</button>
+	</form>
+	<p><i>Formula:</i> Concentration [%] = Concentration [PPM] / 7284<br>
+	Concentration [g/m<sup>3</sup>] = Concentration [PPM] / 569</p>
+	
 	</div>
-	
+	<p>Source: <a href="https://www.oxidationtech.com/ozone/ozone-calculations.html" target="_blank">oxidationtech.com/ozone</a></p>
 
-	
 </div> <!-- container -->
 
 <script>
@@ -158,6 +202,54 @@ function calc3() {
 		document.getElementById("calc3Out").classList.remove("is-invalid");
 		document.getElementById("calc3Out").classList.remove("is-valid");
 		document.getElementById("calc3Out").value = "";
+	}
+}
+
+function calc4() {
+	var calc4In1 = parseFloat(document.getElementById("calc4In1").value);
+	if (!isNaN(calc4In1)) {
+		if (calc4In1 <= 0) {
+			var result = "Concentration cannot be zero or negative!";
+			document.getElementById("calc4Out").classList.remove("is-valid");
+			document.getElementById("calc4Out").classList.add("is-invalid");
+			var result2 = "";
+		} else {
+			document.getElementById("calc4Out").classList.remove("is-invalid");
+			document.getElementById("calc4Out").classList.add("is-valid");
+			var result = calc4In1 / 12.8;
+			var result2 = result * 7284;
+		}
+		document.getElementById("calc4Out").value = result;
+		document.getElementById("calc4Out2").value = result2;
+	} else {
+		document.getElementById("calc4Out").classList.remove("is-invalid");
+		document.getElementById("calc4Out").classList.remove("is-valid");
+		document.getElementById("calc4Out").value = "";
+		document.getElementById("calc4Out2").value = "";
+	}
+}
+
+function calc5() {
+	var calc5In1 = parseFloat(document.getElementById("calc5In1").value);
+	if (!isNaN(calc5In1)) {
+		if (calc5In1 <= 0) {
+			var result = "Concentration cannot be zero or negative!";
+			document.getElementById("calc5Out").classList.remove("is-valid");
+			document.getElementById("calc5Out").classList.add("is-invalid");
+			var result2 = "";
+		} else {
+			document.getElementById("calc5Out").classList.remove("is-invalid");
+			document.getElementById("calc5Out").classList.add("is-valid");
+			var result2 = calc5In1 / 7284.0;
+			var result = result2 * 12.8;
+		}
+		document.getElementById("calc5Out").value = result2;
+		document.getElementById("calc5Out2").value = result;
+	} else {
+		document.getElementById("calc5Out").classList.remove("is-invalid");
+		document.getElementById("calc5Out").classList.remove("is-valid");
+		document.getElementById("calc5Out").value = "";
+		document.getElementById("calc5Out2").value = "";
 	}
 }
 </script>
