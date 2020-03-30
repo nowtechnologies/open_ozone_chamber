@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Conversion tools</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+	<!-- Nav -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	  <a class="navbar-brand" href="index.html">
+		<img src="https://avatars2.githubusercontent.com/u/62620892?s=60" width="30" height="30" class="d-inline-block align-top" alt="">
+		Ozone Calculators
+	  </a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarNav">
+		<ul class="navbar-nav">
+		  <li class="nav-item">
+			<a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="closed_calc.html">Closed space</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="open_calc.html">Open space</a>
+		  </li>
+		  <li class="nav-item active">
+			<a class="nav-link" href="conversions.html">Conversions</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="https://nowtechnologies.github.io/open_ozone_sterilizer/">Project Home</a>
+		  </li>
+		</ul>
+	  </div>
+	</nav>
+	
+	<!-- Content -->
+	<div class="jumbotron" style="background-color: #f0f0f0;">
+	<h3>Ozone Generator Output Conversion</h3>
+	<h4>Calculate generator output from flow rate and ozone concentration.</h4>
+	<form>
+	  <div class="form-group">
+		<label for="calc1In1">Generator flow rate (LPM)</label>
+		<input type="text" class="form-control" id="calc1In1" aria-describedby="calc1Help1" onchange="calc1()">
+		<small id="calc1Help1" class="form-text text-muted">Generator flow rate in liters / minute.</small>
+	  </div>
+	  <div class="form-group">
+		<label for="calc1In2">Ozone concentration (g/m<sup>3</sup>)</label>
+		<input type="text" class="form-control" id="calc1In2" aria-describedby="calc1Help2" onchange="calc1()">
+		<small id="calc1Help2" class="form-text text-muted">Ozone concentration in grams / cubic metres.</small>
+	  </div>
+	  <div class="form-group">
+		<label for="calc1Out">Generator output (g/h)</label>
+		<input type="text" class="form-control" id="calc1Out" placeholder="Calculated output will appear here" readonly>
+	  </div>
+	  <button class="btn btn-primary" onclick="calc1(); return false;">Calculate Generator output</button>
+	</form>
+	<h3 style="padding-top: 1em;">Ozone Concentration Conversion</h3>
+	<h4>Ozone Concentration in Air (g/m<sup>3</sup> to PPM)</h4>
+	<form>
+	  <div class="form-group">
+		<label for="calc2In1">Concentration in Air (g/m<sup>3</sup>)</label>
+		<input type="text" class="form-control" id="calc2In1" aria-describedby="calc2Help1" onchange="calc2()">
+		<small id="calc2Help1" class="form-text text-muted">Note that 1 g/m<sup>3</sup> = 1 mg/l = 1 &mu;g/ml.</small>
+	  </div>
+	  <div class="form-group">
+		<label for="calc2Out">Concentration in PPM</label>
+		<input type="text" class="form-control" id="calc2Out" placeholder="Calculated PPM will appear here" readonly>
+	  </div>
+	  <button class="btn btn-primary" onclick="calc2(); return false;">Calculate Concentration in PPM</button>
+	</form>
+	<h4 style="padding-top: 1em;">Ozone Concentration in Air (PPM to g/m<sup>3</sup>)</h4>
+	<form>
+	  <div class="form-group">
+		<label for="calc3In1">Concentration in PPM</label>
+		<input type="text" class="form-control" id="calc3In1" onchange="calc3()">
+	  </div>
+	  <div class="form-group">
+		<label for="calc3Out">Concentration in Air (g/m<sup>3</sup>)</label>
+		<input type="text" class="form-control" id="calc3Out" placeholder="Calculated PPM will appear here" readonly aria-describedby="calc3Help2">
+		<small id="calc3Help2" class="form-text text-muted">Note that 1 g/m<sup>3</sup> = 1 mg/l = 1 &mu;g/ml.</small>
+	  </div>
+	  <button class="btn btn-primary" onclick="calc3(); return false;">Calculate Concentration in g/m<sup>3</sup></button>
+	</form>
+	</div>
+	
+
+	
+</div> <!-- container -->
+
+<script>
+function calc1() {
+	var calc1In1 = parseFloat(document.getElementById("calc1In1").value);
+	var calc1In2 = parseFloat(document.getElementById("calc1In2").value);
+	if (!isNaN(calc1In1) && !isNaN(calc1In2)) {
+		if (calc1In1 <= 0) {
+			var result = "Generator flow rate cannot be zero or negative!";
+			document.getElementById("calc1Out").classList.remove("is-valid");
+			document.getElementById("calc1Out").classList.add("is-invalid");
+		} else if (calc1In2 <= 0) {
+			var result = "Ozone concentration cannot be zero or negative!";
+			document.getElementById("calc1Out").classList.remove("is-valid");
+			document.getElementById("calc1Out").classList.add("is-invalid");
+		} else {
+			document.getElementById("calc1Out").classList.remove("is-invalid");
+			document.getElementById("calc1Out").classList.add("is-valid");
+			var result = calc1In1 * 60.0 * 0.001 * calc1In2;
+		}
+		document.getElementById("calc1Out").value = result;
+	} else {
+		document.getElementById("calc1Out").classList.remove("is-invalid");
+		document.getElementById("calc1Out").classList.remove("is-valid");
+		document.getElementById("calc1Out").value = "";
+	}
+}
+
+function calc2() {
+	var calc2In1 = parseFloat(document.getElementById("calc2In1").value);
+	if (!isNaN(calc2In1)) {
+		if (calc2In1 <= 0) {
+			var result = "Concentration cannot be zero or negative!";
+			document.getElementById("calc2Out").classList.remove("is-valid");
+			document.getElementById("calc2Out").classList.add("is-invalid");
+		} else {
+			document.getElementById("calc2Out").classList.remove("is-invalid");
+			document.getElementById("calc2Out").classList.add("is-valid");
+			var result = calc2In1 * 467.0;
+		}
+		document.getElementById("calc2Out").value = result;
+	} else {
+		document.getElementById("calc2Out").classList.remove("is-invalid");
+		document.getElementById("calc2Out").classList.remove("is-valid");
+		document.getElementById("calc2Out").value = "";
+	}
+}
+
+function calc3() {
+	var calc3In1 = parseFloat(document.getElementById("calc3In1").value);
+	if (!isNaN(calc3In1)) {
+		if (calc3In1 <= 0) {
+			var result = "PPM cannot be zero or negative!";
+			document.getElementById("calc3Out").classList.remove("is-valid");
+			document.getElementById("calc3Out").classList.add("is-invalid");
+		} else {
+			document.getElementById("calc3Out").classList.remove("is-invalid");
+			document.getElementById("calc3Out").classList.add("is-valid");
+			var result = calc3In1 / 467.0;
+		}
+		document.getElementById("calc3Out").value = result;
+	} else {
+		document.getElementById("calc3Out").classList.remove("is-invalid");
+		document.getElementById("calc3Out").classList.remove("is-valid");
+		document.getElementById("calc3Out").value = "";
+	}
+}
+</script>
+</body>
+</html>

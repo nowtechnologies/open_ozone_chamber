@@ -31,6 +31,12 @@
 		  <li class="nav-item">
 			<a class="nav-link" href="open_calc.html">Open space</a>
 		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="conversions.html">Conversions</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="https://nowtechnologies.github.io/open_ozone_sterilizer/">Project Home</a>
+		  </li>
 		</ul>
 	  </div>
 	</nav>
@@ -41,12 +47,12 @@
 	<form>
 	  <div class="form-group">
 		<label for="inputVol">Chamber volume (m<sup>3</sup>)</label>
-		<input type="text" class="form-control" id="inputVol" aria-describedby="volHelp">
+		<input type="text" class="form-control" id="inputVol" aria-describedby="volHelp" onchange="closed_calc()">
 		<small id="volHelp" class="form-text text-muted">Chamber volume in cubic metres (m<sup>3</sup>)</small>
 	  </div>
 	  <div class="form-group">
 		<label for="inputCap">Generator capacity (g/h)</label>
-		<input type="text" class="form-control" id="inputCap" aria-describedby="capHelp">
+		<input type="text" class="form-control" id="inputCap" aria-describedby="capHelp" onchange="closed_calc()">
 		<small id="capHelp" class="form-text text-muted">Ozone generator capacity in grams-per-hour</small>
 	  </div>
 	  <div class="form-group">
@@ -65,24 +71,29 @@
 function closed_calc() {
 	var min_conc = 0.05;
 	var volume = parseFloat(document.getElementById("inputVol").value);
-	console.log(volume);
 	var capacity = parseFloat(document.getElementById("inputCap").value);
-	var req_mass = min_conc * volume;
-	var prod_per_sec = capacity / 3600.0;
-	if (capacity == 0 || isNaN(capacity)) {
-		var result = "Generator capacity cannot be zero!";
-		document.getElementById("inputExp").classList.remove("is-valid");
-		document.getElementById("inputExp").classList.add("is-invalid");
-	} else if (volume == 0 || isNaN(volume)) {
-		var result = "Chamber volume cannot be zero!";
-		document.getElementById("inputExp").classList.remove("is-valid");
-		document.getElementById("inputExp").classList.add("is-invalid");
+	if (!isNaN(capacity) && !isNaN(volume)) {
+		var req_mass = min_conc * volume;
+		var prod_per_sec = capacity / 3600.0;
+		if (capacity <= 0) {
+			var result = "Generator capacity cannot be zero or negative!";
+			document.getElementById("inputExp").classList.remove("is-valid");
+			document.getElementById("inputExp").classList.add("is-invalid");
+		} else if (volume <= 0) {
+			var result = "Chamber volume cannot be zero or negative!";
+			document.getElementById("inputExp").classList.remove("is-valid");
+			document.getElementById("inputExp").classList.add("is-invalid");
+		} else {
+			document.getElementById("inputExp").classList.remove("is-invalid");
+			document.getElementById("inputExp").classList.add("is-valid");
+			var result = req_mass / prod_per_sec;
+		}
+		document.getElementById("inputExp").value = result;
 	} else {
 		document.getElementById("inputExp").classList.remove("is-invalid");
-		document.getElementById("inputExp").classList.add("is-valid");
-		var result = req_mass / prod_per_sec;
+		document.getElementById("inputExp").classList.remove("is-valid");
+		document.getElementById("inputExp").value = "";
 	}
-	document.getElementById("inputExp").value = result;
 }
 </script>
 </body>
