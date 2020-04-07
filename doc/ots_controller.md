@@ -23,14 +23,9 @@ The OS-6 is an industrial grade ozone controller and monitor. The OS-6 design ha
 
 
 
-## Timer switches
+## Open Ozone Controller
 
-Timer switches are pretty accessible in all hardware stores. In most of the time we are aiming at very short periods of time ( < 1 min ). The only requirement is that the timer switch supports sub minute timing.
+[Github project](https://https://github.com/nowtechnologies/open_ozone_controller)
 
-![](timer_switch.jpg)
+![](the_thing.jpg)
 
-
-
-## Open source controller
-
-![](controller.png)

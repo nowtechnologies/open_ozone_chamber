@@ -1,15 +1,6 @@
-# How to build a sterilizer blazing fast
+# D.I.Y. sterilization chamber 
 
-:warning: These instructions are for emergency situations, where all off-the-shelf components are at hand and there is very short time to produce a working sterilizer. In any other case please build one that has an ozone detector based process controller.
-
-### :construction: WARNING: Disinfection protocols are not finalized yet! :construction:
-
-## Components
-
-* Refrigerator
-* Ozone generator
-* Timer switch
-* Screw terminal block
+*How to modify a refrigerator*
 
 ## Tools
 
@@ -55,13 +46,17 @@ Now that the cooler plate gone, cut the last copper tube that connects the compr
 
 ![](build/refr_rm_compr.jpg)
 
+### Seal the sinker hole
+
+Every refrigerator has a hole to allow the damp to drip down. **This has to be sealed!** Use silicone or duct tape to seal it.
+
+![](build/refr_seal.jpg)
+
 ### Remove the switch and light
 
 There is usually a switch and a light bulb inside the icebox that leaves us an opportunity to use it's wiring to power the ozone generator without drilling a hole into the fridge. *( The switch could be used to disable the generator when the door has been opened, so don't throw it away. )* Remove the whole pack.
 
 ![](build/refr_rm_light.jpg)
-
-
 
 ## Rewiring
 
@@ -76,41 +71,3 @@ Use screw terminal block to connect the three wires of the wall plug cable to th
 Now add screw terminals to the internal end of the same cable. *( Note: there is sometimes an extra black wire for the switch, just ignore it for now. )*
 
 ![](build/refr_ins_rewire.jpg)
-
-### Prepare generator cable
-
-Now repeat the step with the cable provided for the generator, and connect it to the terminals inside the fridge. Make sure it's long enough to place the generator anywhere you planned.
-
-![](build/refr_gen_cable.jpg)
-
-### Install the generator
-
-Place the generator so that neither the intake for it's fan nor the exhaust panel is blocked. 
-
-![](build/refr_gen_install.jpg)
-
-### Seal the sinker hole
-
-Every refrigerator has a hole to allow the damp to drip down. **This has to be sealed!** Use silicone or duct tape to seal it.
-
-![](build/refr_seal.jpg)
-
-## Using the emergency sterilizer
-
-:warning: Please use this device only if you are sure that you can vent the room frequently, as without precise controller there is going to be excess ozone gas in the container on the end of each sterilization cycle. Follow procedure and do not exceed MAC exposure. **MAC = 0.06 PPM for 8 hours a day, 5 days a week.**
-
-### Enable continuous generator operation
-
-Most generators' - that have analogue timer built in - continuous operation can be enabled, by selecting the "hold" function on their dial. If you are using a more precise timer, or an ozone controller you should enable this function on the generator. ( If there is no such dial, then the device is probably already in continuous operation mode. If there is no "hold" function on the dial, the device has to be disassembled and the timer switch has to be shorted. )
-
-![](build/gen_on_hold.jpg)
-
-### Preparations
-
-:warning: **Use our [volume to treatment time converter tool](http://nowtech.cloud/closed_calc.html) to figure out the timing protocol.** For smaller containers and large generators meant for room sized air purification the treatment times are going to be under a minute.
-
-:warning: Most timer switches embedded into the generators are not able to do sub-minute timing. **You have to connect the system through a digital or analogue timer switch that is able to do the precise time switching.**
-
-![](build/refr_gen_timer.jpg)
-
-# :construction:

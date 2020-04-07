@@ -59,9 +59,9 @@ The standard program adopted involves increasing the ozone level over a period o
 
 ## System block diagram
 
-:warning: **Note**: this design is only recommended in emergency situations, where sufficient ventilation of the room can be provided!
+:warning: **Note**: our open design is only recommended in emergency situations, where sufficient ventilation of the room can be provided!
 
-The whole system can be either completely closed, or partially open, where the ionized air can travel through the chamber into a catalyst. For the sake of simplicity we recommend building the closed system with the <u>generator inside the sterilization chamber</u>.
+The system can be either completely closed or partially open, where the ionized air can travel through the chamber into a catalyst. For the sake of simplicity we chose the closed system design with the <u>generator and the decomposer inside the sterilization chamber</u>.
 
 Either way the sterilizer system consists of four separate modules that can be <u>bought or built</u>:
 
@@ -90,6 +90,11 @@ A coronal discharge method based generator consists of:
 
 ![](doc/generator.png)
 
+For ultraviolet radiation based ozone production: *( this method is less efficient )*
+
+* Powerful light emitter with a spectral peak of 185 nm.
+* A fan or blower that moves the air.
+
 ### [Sterilization chamber](doc/steril_chamber.md)
 
 * The chamber has to be somewhat airtight as the ozone is harmful to humans as well.
@@ -98,7 +103,7 @@ A coronal discharge method based generator consists of:
 
 <img src="doc/chamber.png"  />
 
-### [Decomposer](doc/catalizator.md)
+### [Decomposer](doc/decomposer.md)
 
 Ozone can be reduced to oxygen **thermally** or **catalytically** or **by radiation**. 
 
@@ -115,16 +120,15 @@ Ozone can be reduced to oxygen **thermally** or **catalytically** or **by radiat
 
 ![](doc/catalyst.png)
 
-### [Process controller](doc/controller.md)
+### [Process controller](doc/ots_controller.md)
 
-*  In it's simplest form this could be a **timer switch**. *( either the generators built-in timer or an external )*
-*  Also there are ready made [ozone controllers](http://www.iaq.hu/F2077TSM-O3%20ozontavado.pdf) with relay outputs.
+*  There are ready made [ozone controllers](http://www.iaq.hu/F2077TSM-O3%20ozontavado.pdf) with relayed outputs.
 
 **Otherwise a controller could consist of:**
 
 *  MCU chip or board *( general programmable micro controller board e.g. Nucleo or Arduino )*
-* Temperature sensor to support the decomposition model.
-* Humidity sensor to check protocol requirements are met.
+* Temperature sensor to support the decomposition model and compensate for ozone readings.
+* Humidity sensor to check protocol requirements are met and compensate for ozone readings.
 * Ozone sensor as control feedback and to check protocol requirements.
 * Optional user interface *( Small OLED display and rotary encoder )* for setting chamber parameters
 * Single button to start / stop sterilization process.
@@ -133,41 +137,36 @@ Ozone can be reduced to oxygen **thermally** or **catalytically** or **by radiat
 
 ![](doc/controller.png)
 
+
+
 ## Build instructions
+
+
 
 ### Closed system assembly
 
-:warning: If time is a factor and there is opportunity to vent the room after each sterilization process we recommend building the fully closed system design *( although it is bad for the environment )*.
+1. [Modify a refrigerator](doc/refrigerator.md)
+2. [Buy an off the shelf generator module](doc/ozone_generator.md)
+3. [Buy an off the shelf ozone controller](doc/ots_controller.md)
 
-**Fastest way:**
 
-* Get a refrigerator of desired size and place an off the shelf ozone generator in it.
-* Use our [volume to treatment time converter tool](http://nowtech.cloud/closed_calc.html) to figure out the timing protocol.
-* Plug the system in, through a ready made AC timer switch.
-* Follow the [instructions here](doc/ver_emergency.md).
 
-### Open system assembly
-
-:warning: It is highly advised for medical environments to build a device with an ozone decomposer to prevent unnecessary ozone accumulation in the building.
-
-* A hermetic chamber or a modified refrigerator.
-* An off-the-shelf or a DIY ozone controller.
-* An off-the-shelf or a DIY decomposer.
-
-* Follow the build [instructions here](). :construction:
-
-### How to build the missing ozone generator
+### How to build an Ozone Generator
 
 * If an off-the-shelf generator is not available:
   * Here is how to [build it from modules](doc/ozone_generator.md). 
   * And if you can't find modules anymore here is how to [build it from components](doc/ozone_generator.md).
-* Also detailed information on [how to create the electrodes](doc/electrodes.md) itself.
+* Find information on [how to create the electrodes](doc/electrodes.md) itself.
 * Generator [capacity measurement instructions](doc/capacity.md).
 
-### Build instructions for the control unit
 
-* Worst case scenario the process controller is the "timer switch" on the generator.
-  * If the generator is built from modules or scratch [add a timer switch](doc/ots_controller.md).​
-* Continuous operation requires more sophisticated control with sensor feedback:
-  * Find a controller that has been manufactured for this purpose, or
-  * follow this link to [build a process controller](doc/diy_controller.md).:construction:
+
+### How to build and Ozone Monitor
+
+[Open ozone monitor](https://github.com/nowtechnologies/open_ozone_monitor)
+
+
+
+### How to build an Ozone Controller
+
+[Open ozone controller](https://github.com/nowtechnologies/open_ozone_controller)
