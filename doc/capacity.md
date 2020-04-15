@@ -25,11 +25,15 @@ Simplest way to determine the capacity of a generator is with a calibrated measu
 
 
 
-## Open ozone monitor
+## Open ozone sensor + PC GUI
 
-[Github project](https://github.com/nowtechnologies/open_ozone_monitor)
+#### [OO/Sensor](https://github.com/nowtechnologies/open_ozone_sensor)
 
-![](sensor_schema.png)
+![](sensor.jpg)
 
 * Typical range 10 ppm - 1000 ppm
 * Price <50 EUR
+
+#### [OO/Monitor](https://github.com/nowtechnologies/open_ozone_monitor)
+
+![](sketch.png)

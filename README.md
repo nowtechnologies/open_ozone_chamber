@@ -161,6 +161,12 @@ Ozone can be reduced to oxygen **thermally** or **catalytically** or **by radiat
 
 
 
+### How to build and Ozone Sensor
+
+[Open ozone sensor](https://github.com/nowtechnologies/open_ozone_sensor)
+
+
+
 ### How to build and Ozone Monitor
 
 [Open ozone monitor](https://github.com/nowtechnologies/open_ozone_monitor)
